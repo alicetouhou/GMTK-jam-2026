@@ -24,6 +24,10 @@ b = Vector2(0, 280)
 a = Vector2(0, -540)
 b = Vector2(0, 280)
 
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_w36n0"]
+a = Vector2(-30, 0)
+b = Vector2(30, 0)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_grq6u"]
 size = Vector2(590, 215)
 
@@ -69,6 +73,14 @@ shape = SubResource("SegmentShape2D_cnpdw")
 [node name="Left" type="CollisionShape2D" parent="WallCollider" unique_id=76613566]
 position = Vector2(-900, 0)
 shape = SubResource("SegmentShape2D_xsh4d")
+
+[node name="Entrance Ceiling" type="CollisionShape2D" parent="WallCollider" unique_id=956483886]
+position = Vector2(-930, 280)
+shape = SubResource("SegmentShape2D_w36n0")
+
+[node name="Exit Ceiling" type="CollisionShape2D" parent="WallCollider" unique_id=554176261]
+position = Vector2(930, 280)
+shape = SubResource("SegmentShape2D_w36n0")
 
 [node name="Platform" parent="." unique_id=848708187 instance=ExtResource("2_sun4g")]
 position = Vector2(211, 799)

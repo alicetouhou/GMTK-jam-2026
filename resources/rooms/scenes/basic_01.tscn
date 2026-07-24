@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://db5oj88umoqqg" path="res://resources/rooms/scenes/room.gd" id="1_g8ypc"]
 [ext_resource type="Texture2D" uid="uid://lvcq0ppqeebt" path="res://assets/rooms/backgrounds/simple_bg.png" id="2_iy05r"]
 [ext_resource type="PackedScene" uid="uid://bratik0ksh71l" path="res://game/room_objects/platform/platform.tscn" id="3_8532v"]
-[ext_resource type="PackedScene" uid="uid://bmmuknymvntxs" path="res://game/room_objects/border_door/border_door.tscn" id="4_pbn6u"]
 [ext_resource type="PackedScene" uid="uid://kkpl80x7124d" path="res://game/room_objects/chest/chest.tscn" id="5_iy05r"]
 [ext_resource type="PackedScene" uid="uid://dpsallg7mur0y" path="res://game/enemy/soldier/soldier.tscn" id="6_8532v"]
 
@@ -18,9 +17,13 @@ b = Vector2(960, 0)
 a = Vector2(0, -540)
 b = Vector2(0, 280)
 
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_wgbjq"]
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_iy05r"]
 a = Vector2(0, -540)
-b = Vector2(0, 540)
+b = Vector2(0, 280)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_g4v7s"]
+a = Vector2(-30, 0)
+b = Vector2(30, 0)
 
 [node name="Basic01" type="Node2D" unique_id=1549269063]
 script = ExtResource("1_g8ypc")
@@ -61,9 +64,17 @@ shape = SubResource("SegmentShape2D_uvxfj")
 position = Vector2(900, 0)
 shape = SubResource("SegmentShape2D_12vg5")
 
-[node name="Left" type="CollisionShape2D" parent="WallCollider" unique_id=2003128985]
+[node name="Left" type="CollisionShape2D" parent="WallCollider" unique_id=936980157]
 position = Vector2(-900, 0)
-shape = SubResource("SegmentShape2D_wgbjq")
+shape = SubResource("SegmentShape2D_iy05r")
+
+[node name="Entrance Ceiling" type="CollisionShape2D" parent="WallCollider" unique_id=635535553]
+position = Vector2(-930, 280)
+shape = SubResource("SegmentShape2D_g4v7s")
+
+[node name="Exit Ceiling" type="CollisionShape2D" parent="WallCollider" unique_id=1915931916]
+position = Vector2(930, 280)
+shape = SubResource("SegmentShape2D_g4v7s")
 
 [node name="Platform" parent="." unique_id=848708187 instance=ExtResource("3_8532v")]
 position = Vector2(610, 800)
@@ -81,9 +92,6 @@ position = Vector2(1310, 800)
 
 [node name="Platform4" parent="." unique_id=719312889 instance=ExtResource("3_8532v")]
 position = Vector2(960, 560)
-
-[node name="BorderDoor" parent="." unique_id=573432752 instance=ExtResource("4_pbn6u")]
-position = Vector2(1851, 920)
 
 [node name="Chest" parent="." unique_id=1912984734 instance=ExtResource("5_iy05r")]
 position = Vector2(960, 515)

@@ -20,6 +20,10 @@ b = Vector2(0, 280)
 a = Vector2(0, -540)
 b = Vector2(0, 540)
 
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_mjqvx"]
+a = Vector2(-30, 0)
+b = Vector2(30, 0)
+
 [node name="FirstRoom" type="Node2D" unique_id=1549269063]
 script = ExtResource("1_mjqvx")
 
@@ -63,6 +67,10 @@ shape = SubResource("SegmentShape2D_12vg5")
 position = Vector2(-900, 0)
 shape = SubResource("SegmentShape2D_wgbjq")
 
+[node name="Exit Ceiling" type="CollisionShape2D" parent="WallCollider" unique_id=1018492445]
+position = Vector2(930, 280)
+shape = SubResource("SegmentShape2D_mjqvx")
+
 [node name="Platform" parent="." unique_id=848708187 instance=ExtResource("2_mjqvx")]
 position = Vector2(210, 800)
 
@@ -70,7 +78,7 @@ position = Vector2(210, 800)
 position = Vector2(1710, 800)
 
 [node name="Platform2" parent="." unique_id=1188431904 instance=ExtResource("2_mjqvx")]
-position = Vector2(211, 560)
+position = Vector2(210, 560)
 
 [node name="Platform4" parent="." unique_id=719312889 instance=ExtResource("2_mjqvx")]
 position = Vector2(1710, 560)
